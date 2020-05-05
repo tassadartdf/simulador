@@ -3841,8 +3841,8 @@ function handleLayout1() {
     //document.getElementById('maintitle').innerHTML = "<font style='font-weight: bold; Source Sans Pro; font-size: 1.7vmax; vertical-align: bottom;'>Simulación interactiva de una Epidemia </font><br/><font style='font-family: Source Sans Pro; font-size: 0.9vmax; vertical-align: bottom;'>Versión original de <a href='https://prajwalsouza.github.io/' style='text-decoration: none; cursor: pointer;' target='_blank'><font style='color: hsla(197, 100%, 50%, 1);'>Prajwal D'Souza,</font></a> código disponible <a href='https://github.com/prajwalsouza/Epidemic-Simulation/blob/master/Epidemic-Simulation-Web-Code.html' style='text-decoration: none; cursor: pointer;' target='_blank'><font style='color: hsla(197, 100%, 50%, 1);'>aquí.</font></a> Basado en el video de <a href='https://www.youtube.com/watch?v=gxAaO2rsdIs' style='text-decoration: none; cursor: pointer;' target='_blank'><font style='color: hsla(197, 100%, 50%, 1);'>3Blue1Brown.</font><a/>"
 
     //document.getElementById("mainB2HSpacer2").style.height = "6%";
-    document.getElementById("caseTypeNameH").style.height = "4%";
-    document.getElementById("caseTypeNameH").style.fontSize = "1vmax";
+    //document.getElementById("caseTypeNameH").style.height = "4%";
+    //document.getElementById("caseTypeNameH").style.fontSize = "1vmax";
 
     document.getElementById("upperLayer").style.height = "65%";
     document.getElementById("simpleCaseGraphH").style.height = "65%";
@@ -3930,10 +3930,10 @@ simulationParameters.reproductiveNumber = 0;
 //parameterData[10] = {name: 'infectionRadius', div: divAdjust, initValue: 0.1, max: 0.4, min: 0.01, step: 0.001, color: '10, 100%, 63%', transform: 'parseFloat(#paraValue#)', requiresReset: false, runFAtEnd: ''}
 //parameterData[1] = {name: 'probabilityofInfection', div: 'La probabilidad de infección en un día dado es de un @@@%',initValue: 6, max: 100, min: 0, step: 0.01, color: '10, 100%, 63%', transform: 'parseFloat(#paraValue#)/100', requiresReset: false, runFAtEnd: ''}
 divAdjust =
-  '@@@% población/comunidad infectada inicialmente<br/><font style="color:grey; font-size: 0.9vmax;"> En el caso de comunidades, @@@% de la comunidad es infectada inicialmente.</font>';
+  '<div class="row">@@@% población/comunidad infectada inicialmente<br/><font style="color:grey; font-size: 0.9vmax;"> En el caso de comunidades, @@@% de la comunidad es infectada inicialmente.</font> </div>';
 if (dmode == "landscape") {
   divAdjust =
-    '@@@% población/comunidad infectada inicialmente<br/><font style="color:grey; font-size: 0.9vmax;">En el caso de comunidades, @@@% de la comunidad es infectada inicialmente.</font>';
+    '<div class="row"> @@@% población/comunidad infectada inicialmente<br/><font style="color:grey; font-size: 0.9vmax;">En el caso de comunidades, @@@% de la comunidad es infectada inicialmente.</font></div>';
 }
 parameterData[2] = {
   name: "fractionInfectedInitially",
@@ -3949,7 +3949,7 @@ parameterData[2] = {
 };
 //parameterData[3] = {name: 'infectionTime', div: 'La duración de la infección es de @@@ días',initValue: 25, max: 100, min: 1, step: 1, color: '10, 100%, 63%', transform: 'parseInt(#paraValue#)', requiresReset: false, runFAtEnd: ''}
 divAdjust =
-  'Distanciamiento social<br/><small><font style="color:grey; font-size: 0.9vmax"> <span floar:right>Menor distancia</span>  <span style="float:right">Mayor distancia</span></font>';
+  '<div class="row">Distanciamiento social<br/><small><font style="color:grey; font-size: 0.9vmax"> <span floar:right>Menor distancia</span>  <span style="float:right">Mayor distancia</span></font></div>';
 parameterData[4] = {
   name: "socialDistancingFactorA",
   div: divAdjust,
@@ -3977,10 +3977,10 @@ parameterData[5] = {
 };
 
 divAdjust =
-  'Se observa distanciamiento social dentro de @@@ veces el radio de infección.<br/><font style="color:grey; font-size: 1.2vmax;"> (Esta cantidad reduce muchos cálculos. Mientras más chico el valor, mejor. Pero, valores grandes pueden imitar la simulación del video)</font>';
+  '<div class="row">Se observa distanciamiento social dentro de @@@ veces el radio de infección.<br/><font style="color:grey; font-size: 1.2vmax;"> (Esta cantidad reduce muchos cálculos. Mientras más chico el valor, mejor. Pero, valores grandes pueden imitar la simulación del video)</font></div>';
 if (dmode == "landscape") {
   divAdjust =
-    'Se observa distanciamiento social dentro de @@@ veces el radio de infección.<br/><font style="color:grey; font-size: 0.8vmax;">(Esta cantidad reduce muchos cálculos. Mientras más chico el valor, mejor. Pero, valores grandes pueden imitar la simulación del video)</font>';
+    '<div class="row">Se observa distanciamiento social dentro de @@@ veces el radio de infección.<br/><font style="color:grey; font-size: 0.8vmax;">(Esta cantidad reduce muchos cálculos. Mientras más chico el valor, mejor. Pero, valores grandes pueden imitar la simulación del video)</font></div>';
 }
 
 //parameterData[6] = {name: 'boxesToConsider', div: divAdjust,initValue: 2, max: 20, min: 1, step: 1, color: '40, 100%, 50%', transform: 'parseInt(#paraValue#)', requiresReset: false, runFAtEnd: ''}
@@ -3988,7 +3988,7 @@ if (dmode == "landscape") {
 parameterData[7] = {
   name: "quarantineAfter",
   div:
-    "El sistema de salud detecta un individuo contagiado @@@ días después de producido el contagio.",
+    '<div class="row"> El sistema de salud detecta un individuo contagiado @@@ días después de producido el contagio.</div>',
   initValue: 7,
   max: 25,
   min: 1,
@@ -4001,7 +4001,7 @@ parameterData[7] = {
 parameterData[8] = {
   name: "startQ",
   div:
-    "El sistema de salud se pone en marcha @@@ días después del comienzo de la epidemia.",
+    '<div class="row">El sistema de salud se pone en marcha @@@ días después del comienzo de la epidemia.</div>',
   initValue: 2,
   max: 50,
   min: 0,
@@ -4014,7 +4014,7 @@ parameterData[8] = {
 parameterData[9] = {
   name: "probabilityOfNoSymptoms",
   div:
-    "@@@% de los contagiados son asintomáticos, luego, no son detectados por el sistema de salud.",
+    '<div class="row">@@@% de los contagiados son asintomáticos, luego, no son detectados por el sistema de salud.</div>',
   initValue: 20,
   max: 100,
   min: 0,
@@ -4034,10 +4034,10 @@ parameterData[9] = {
 //parameterData[16] = {name: 'frameRate', div: 'Fotogramas por segundo &nbsp&nbsp @@@',initValue: 40, max: 100, min: 10, step: 1, color: '198, 100%, 50%', transform: 'parseInt(#paraValue#)', requiresReset: true, runFAtEnd: 'setAnimationDetails()'}
 
 divAdjust =
-  '@@@ días simulados por segundo <br/><font style="color:grey; font-size: 1.2vmax;"> (Puede variar dependiendo de la velocidad de tu reloj.)</font>';
+  '<div class="row">@@@ días simulados por segundo <br/><font style="color:grey; font-size: 1.2vmax;"> (Puede variar dependiendo de la velocidad de tu reloj.)</font></div>';
 if (dmode == "landscape") {
   divAdjust =
-    '@@@ días simulados por segundo <br/><font style="color:grey; font-size: 0.8vmax;"> (Puede variar dependiendo de la velocidad de tu reloj.)</font>';
+    '<div class="row">@@@ días simulados por segundo <br/><font style="color:grey; font-size: 0.8vmax;"> (Puede variar dependiendo de la velocidad de tu reloj.)</font></div>';
 }
 //parameterData[17] = {name: 'daysEverySecond', div: divAdjust,initValue: 3, max: 20, min: 1, step: 1, color: '198, 100%, 50%', transform: 'parseInt(#paraValue#)', requiresReset: true, runFAtEnd: 'setAnimationDetails()'}
 
@@ -4049,7 +4049,7 @@ function addVariousParameters() {
       pName = parameterData[parameterIndex].name + "div";
       parameterSliderRMap[pName + "Slider"] = parameterIndex;
       parameterDivData =
-        '<div id="parameter' +
+        '<div class="row" id="parameter' +
         pName +
         'Box" style="margin:0px;width:100%; position: relative; z-index: 1;display: flex;"><div id="parameter' +
         pName +
@@ -4095,11 +4095,11 @@ function addVariousParameters() {
       pName = parameterData[parameterIndex].name + "div";
       parameterSliderRMap[pName + "Slider"] = parameterIndex;
       parameterDivData =
-        '<div id="parameter' +
+        '<div class="row" id="parameter' +
         pName +
-        'Box" style="margin:0px;width:100%; position: relative; z-index: 1;display: inline-block"><div id="parameter' +
+        'Box"><div id="parameter' +
         pName +
-        'Text" style="margin:0px;width:92%; position: relative; z-index: 1;display: inline-block; text-align: left;">' +
+        'Text">' +
         parameterData[parameterIndex].div.replace(
           /@@@/g,
           '<font style="font-weight: bold; color:hsla(' +
@@ -4110,7 +4110,7 @@ function addVariousParameters() {
         ) +
         '</div><div style="width: 100%; height: 8%"></div><div id="parameter' +
         pName +
-        'SliderH" style="margin:0px;width:100%; position: relative; z-index: 1;display: inline-block;"></div><div style="width: 100%; height: 15%"></div></div>';
+        'SliderH"></div><div style="width: 100%; height: 15%"></div></div>';
       $(parameterDivData).appendTo("#parametersListH");
       divSlider(
         "parameter" + pName + "SliderH",
@@ -6840,14 +6840,14 @@ function updateHealthActionsDescription(value) {
     "simpleCaseGraph&QG",
     "simpleCaseGraph&QH",
     "simpleCaseGraphH",
-    "<strong>Caso Simple:</strong><br>una ciudad o pueblo, sin contacto con otras poblaciones.",
+    "Caso Simple: <small>una ciudad o pueblo, sin contacto con otras poblaciones.</small>",
   ];
   graphToQMap["simpleCase&Q"] = [
     "simpleCase",
     "simpleCaseGraphG",
     "simpleCaseGraphH",
     "simpleCaseGraph&QH",
-    "<strong>Caso Simple con Medidas del Sistema de Salud:</strong><br>el sistema de salud detecta, trata y aísla a las personas que presentan síntomas " +
+    "Caso Simple con Medidas del Sistema de Salud: <small>el sistema de salud detecta, trata y aísla a las personas que presentan síntomas</small> " +
       value +
       " días después de contagiadas.",
   ];
@@ -6857,7 +6857,7 @@ function updateHealthActionsDescription(value) {
     "centralLocationCaseG",
     "centralLocationCaseGraphH",
     "centralLocationQuarantineCaseGraphH",
-    "<strong>Punto de Aglomeración con Medidas del Sistema de Salud:</strong><br>el sistema de salud detecta, trata y aísla a las personas que presentan síntomas " +
+    "Punto de Aglomeración con Medidas del Sistema de Salud: <small>el sistema de salud detecta, trata y aísla a las personas que presentan síntomas </small>" +
       value +
       " días después de contagiadas.",
   ];
@@ -6866,7 +6866,7 @@ function updateHealthActionsDescription(value) {
     "centralLocationQuarantineCaseGraph",
     "centralLocationQuarantineCaseGraphH",
     "centralLocationCaseGraphH",
-    "<strong>Punto de Aglomeración:</strong><br>un supermercado, un banco, hospital, cine, etc.",
+    "Punto de Aglomeración: <small>un supermercado, un banco, hospital, cine, etc.</small>",
   ];
 
   graphToQMap["communitiesQuarantineCase"] = [
@@ -6874,7 +6874,7 @@ function updateHealthActionsDescription(value) {
     "communitiesCaseGraph",
     "communitiesCaseGraphH",
     "communitiesQuarantineCaseGraphH",
-    "<strong>Interacción entre Comunidades con Medidas del Sistema de Salud:</strong><br>el sistema de salud detecta, trata y aísla a las personas que presentan síntomas " +
+    "Interacción entre Comunidades con Medidas del Sistema de Salud: <small>el sistema de salud detecta, trata y aísla a las personas que presentan síntomas </small<" +
       value +
       " días después de contagiadas.",
   ];
@@ -6883,7 +6883,7 @@ function updateHealthActionsDescription(value) {
     "communitiesQuarantineCaseGraph",
     "communitiesQuarantineCaseGraphH",
     "communitiesCaseGraphH",
-    "<strong>Interacción entre Comunidades:</strong><br>hemos puesto 3 ciudades, con gente que mayormente circula en su ciudad, pero algunas viajan de una ciudad a otra.",
+    "Interacción entre Comunidades: <small>hemos puesto 3 ciudades, con gente que mayormente circula en su ciudad, pero algunas viajan de una ciudad a otra.</small>",
   ];
 }
 

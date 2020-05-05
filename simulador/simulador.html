@@ -29,14 +29,14 @@
 		<link rel="icon" href="../square.png">
 
 		<style>
-			#universidades {
+			/* #universidades {
 			    position: absolute;
 			    font-size: 15px;
 			    font-family: raleway, sans-serif;
 			    color: white;
 			    top: 1em;
 			    left: 1em;
-			}
+			} */
 
 			#parameterfractionInfectedInitiallydivBox { display: none !important; }
 			#infoH { display: none !important; }
@@ -68,17 +68,17 @@
 			}
 
 			#caseTypeName {
-			    font-size: 1.3em !important;
+			    font-size: 1.2em !important;
 			    color: white !important;
-			    line-height: 1.2em;
+			    line-height: 1em;
 			}
 
-			#caseTypeNameH {
+			/* #caseTypeNameH {
 			    color: white !important;
 			    height: 70px !important;
 			    margin-top: -15px !important;
 			    overflow: hidden !important;
-			}
+			} */
 
 			#upperLayer {
 			    box-shadow: none !important;
@@ -238,11 +238,15 @@
 		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	
-	<body>
-		<div class="container">
-			<h4 id="universidades">Universidad Nacional de Tierra del Fuego - Universidad Tecnológica Nacional</h4>
-		</div>	
-		<div class="container text-white" id="containAll">
+	<body class="container">
+		<div class="row">
+			<h3 id="universidades" class="text-center w-100 text-white">UNTDF & UTN - Simulación interactiva de una Epidemia</h3>
+		</div>
+		<br>
+		<div class="row" id="caseTypeNameH">
+			<span id="caseTypeName">Caso Simple: <small>una ciudad o pueblo, sin contacto con otras poblaciones.</small></span>
+		</div>
+		<div class="row text-white" id="containAll">
 			<div class="row">
 				<div id="MainBlock1" class="col-lg-6 col-sm-6 col-xs-12">
 					<div id="plotGraphH" style="width: 100%; height: 200px; overflow: hidden;position: relative; z-index: 1; display: inline-block;">
@@ -255,32 +259,13 @@
 							<span>PARÁMETROS</span> <span>(Algunos parámetros son específicos para ciertos casos.)</span>
 						</div>
 						<small>
-						<div id="parametersListH" class="tex-right">
+						<div id="parametersListH" class="container tex-right">
 							
-						</div>
-					</small>
+						</div></small>
 					</div>
 				</div>
 			
 				<div id="MainBlock2" class="col-lg-6 col-sm-6 col-xs-12">
-					<div id="titleH" class="text-white">
-						<div id="title">
-							<h3>Simulación interactiva de una Epidemia</h3>
-							
-							<p> <small>
-								<span>El simulador funciona mejor con una Notebook o PC, estamos trabajando en una versión para teléfonos.</span>
-								Versión original de <a href='https://prajwalsouza.github.io/' style='text-decoration: none; cursor: pointer;' target='_blank'>Prajwal D'Souza,</a> código disponible 
-								<a href='https://github.com/prajwalsouza/Epidemic-Simulation/blob/master/Epidemic-Simulation-Web-Code.html' style='text-decoration: none; cursor: pointer;' target='_blank'>aquí.</a> Basado en el video de 
-								<a href='https://www.youtube.com/watch?v=gxAaO2rsdIs' style='text-decoration: none; cursor: pointer;' target='_blank'>3Blue1Brown.</a>
-							</small></p>
-							
-						</div>
-					</div>
-					<br>
-					<div id="caseTypeNameH">
-						<span id="caseTypeName">Caso Simple:<br>una ciudad o pueblo, sin contacto con otras poblaciones.</span>
-					</div>
-					<br/>
 					<div id="upperLayer" hidden>
 						<!-- <span id="R_0" style="font-size: 1vmax; color: white; font-family: Source Sans Pro;">R : 0.1</span>
 						<span id="R_0-Info" style="font-size: 0.7vmax; color: grey; font-family: Source Sans Pro; float: right; top: 80%;">Reproductive Number Calculation here is a little different from the 3B1B video. <br/>Here, its Average(Number of individuals infected by one infected individual)</span> -->
@@ -355,4 +340,17 @@
 
 		<script src="../js/main.js" ></script>
 	</body>
+	<footer class="footer w-100">
+		<div id="titleH" class="text-white text-center">
+			<div id="title">
+				<p> <small>
+					<span>**El simulador funciona mejor con una Notebook o PC</span>
+					Versión original de <a href='https://prajwalsouza.github.io/' style='text-decoration: none; cursor: pointer;' target='_blank'>Prajwal D'Souza,</a> código disponible 
+					<a href='https://github.com/prajwalsouza/Epidemic-Simulation/blob/master/Epidemic-Simulation-Web-Code.html' style='text-decoration: none; cursor: pointer;' target='_blank'>aquí.</a> Basado en el video de 
+					<a href='https://www.youtube.com/watch?v=gxAaO2rsdIs' style='text-decoration: none; cursor: pointer;' target='_blank'>3Blue1Brown.</a>
+				</small></p>
+				
+			</div>
+		</div>
+	</footer>
 <html>
