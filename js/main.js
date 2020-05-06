@@ -124,7 +124,7 @@ function setDarkMode() {
       "hsla(190, 100%, 100%, 1)";
     document.getElementById("darkmodeoption").style.fontWeight = "bold";
 
-    document.body.style.background = "black";
+    //document.body.style.background = "black";
 
     document.getElementById("maintitle").style.color =
       "hsla(190, 100%, 100%, 1)";
@@ -255,7 +255,7 @@ function setDarkMode() {
 darkmode = true;
 
 if (darkmode) {
-  document.body.style.background = "black";
+  //document.body.style.background = "black";
 }
 
 function graphToSvgY(value, graphymin, graphymax) {
@@ -1825,7 +1825,7 @@ function addGraph(parentdiv, name, gdata) {
   gdata.scrollZoom = gdata.scrollZoom || "yes";
 
   if (gdata.scrollZoom == "yes") {
-    svgElement.addEventListener("wheel", wheelHandle);
+    //svgElement.addEventListener("wheel", wheelHandle);
   }
 
   svgPTVariable[name] = svgElement.createSVGPoint();
@@ -1840,8 +1840,8 @@ function addGraph(parentdiv, name, gdata) {
   gdata.runFunctionDuringDrag = gdata.runFunctionDuringDrag || "";
 
   if (gdata.draggability == "yes") {
-    svgElement.addEventListener("mousedown", graphDragHandle);
-    svgElement.addEventListener("touchstart", graphDragHandle);
+    // svgElement.addEventListener("mousedown", graphDragHandle);
+    // svgElement.addEventListener("touchstart", graphDragHandle);
   } else {
     svgElement.addEventListener("touchmove", graphTouchDisable);
   }
@@ -3754,8 +3754,8 @@ function graphDragMoveEvent(event) {
 function graphDragUpEvent(event) {
   gphname = currentMovingGraph.id;
 
-  currentMovingGraph.addEventListener("mousedown", graphDragHandle);
-  currentMovingGraph.addEventListener("touchstart", graphDragHandle);
+  // currentMovingGraph.addEventListener("mousedown", graphDragHandle);
+  // currentMovingGraph.addEventListener("touchstart", graphDragHandle);
   window.removeEventListener("mousemove", graphDragMoveEvent);
   window.removeEventListener("mouseup", graphDragUpEvent);
   window.removeEventListener("touchmove", graphDragMoveEvent);
@@ -3768,7 +3768,7 @@ function graphDragUpEvent(event) {
 }
 
 function graphTouchDisable(event) {
-  event.preventDefault();
+  //event.preventDefault();
 }
 
 dmode = "square";
@@ -3896,7 +3896,7 @@ function handleLayout1() {
     // document.getElementById('CommunitiesoptionH').style.float = 'right'
 
     //document.getElementById("plotGraphH").style.height = "40%";
-    document.getElementById("parametersH").style.height = "45%";
+    //document.getElementById("parametersH").style.height = "45%";
 
     document.getElementById("parametersTitleText").style.fontSize = "1.1vmax";
     document.getElementById("parametersTitleText").style.height = "10%";
