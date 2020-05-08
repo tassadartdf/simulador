@@ -3890,7 +3890,7 @@ parameterData = {};
 
 simulationParameters.reproductiveNumber = 0;
 divAdjust =
-  '<div class="row"> <span> @@@% población/comunidad infectada inicialmente </span></div>';
+  '<span class="mt-3"> @@@% población/comunidad infectada inicialmente </span>';
 parameterData[2] = {
   name: "fractionInfectedInitially",
   div: divAdjust,
@@ -3905,7 +3905,8 @@ parameterData[2] = {
 };
 //parameterData[3] = {name: 'infectionTime', div: 'La duración de la infección es de @@@ días',initValue: 25, max: 100, min: 1, step: 1, color: '10, 100%, 63%', transform: 'parseInt(#paraValue#)', requiresReset: false, runFAtEnd: ''}
 divAdjust =
-  '<div class="row">Normativas sociales<small><span style="color:grey; font-size: 0.9vmax"></span></div>';
+  '<div class="col-12" ><span>Normativas sociales</span> </div> <div class="col-12"><span class="float-left">Menores</span><span class="float-right">Mayores</span></div>';
+  
 parameterData[4] = {
   name: "socialDistancingFactorA",
   div: divAdjust,
@@ -3944,7 +3945,7 @@ if (dmode == "landscape") {
 parameterData[7] = {
   name: "quarantineAfter",
   div:
-    '<div class="row"> Velocidad de detección @@@ días.</div>',
+    '<span> Velocidad de detección @@@ días.</span>',
   initValue: 7,
   max: 25,
   min: 1,
@@ -3957,7 +3958,7 @@ parameterData[7] = {
 parameterData[8] = {
   name: "startQ",
   div:
-    '<div class="row">Respuesta del sistema @@@ días.</div>',
+    '<span>Respuesta del sistema @@@ días.</span>',
   initValue: 2,
   max: 50,
   min: 0,
@@ -3970,7 +3971,7 @@ parameterData[8] = {
 parameterData[9] = {
   name: "probabilityOfNoSymptoms",
   div:
-    '<div class="row">@@@% Pacientes asiontomáticos.</div>',
+    '<span> @@@% Pacientes asiontomáticos.</span>',
   initValue: 20,
   max: 100,
   min: 0,
@@ -4051,7 +4052,7 @@ function addVariousParameters() {
       pName = parameterData[parameterIndex].name + "div";
       parameterSliderRMap[pName + "Slider"] = parameterIndex;
       parameterDivData =
-        '<div class="row" id="parameter' +
+        '<div class="col-12 justify-content-center text-center" id="parameter' +
         pName +
         'Text">' +
         parameterData[parameterIndex].div.replace(
@@ -4060,7 +4061,7 @@ function addVariousParameters() {
             parameterData[parameterIndex].initValue +
             "</span>"
         ) +
-        '</div><div class="row mb-3" id="parameter' +
+        '</div><div class="col-12 mb-3" id="parameter' +
         pName +
         'SliderH"></div></div></div>';
       $(parameterDivData).appendTo("#parametersListH");
@@ -4072,7 +4073,7 @@ function addVariousParameters() {
         parameterData[parameterIndex].initValue,
         parameterData[parameterIndex].step,
         "parameterEvent(event)",
-        "80%",
+        "100%",
         "6px",
         "hsla(190, 100%, 100%, 1)",
         "17px",
