@@ -3833,17 +3833,7 @@ function shuffle(array) {
 function handleLayout1() {
   if (dmode == "landscape") {
 
-    //document.getElementById("mainB2HSpacer1").style.height = "3%";
-    //document.getElementById('maintitle').style.textAlign = 'right'
-    // document.getElementById('titleH').style.height = '15%'
     document.getElementById("maintitle").style.fontSize = "2vmax";
-
-    //document.getElementById('maintitle').innerHTML = "<font style='font-weight: bold; Source Sans Pro; font-size: 1.7vmax; vertical-align: bottom;'>Simulación interactiva de una Epidemia </font><br/><font style='font-family: Source Sans Pro; font-size: 0.9vmax; vertical-align: bottom;'>Versión original de <a href='https://prajwalsouza.github.io/' style='text-decoration: none; cursor: pointer;' target='_blank'><font style='color: hsla(197, 100%, 50%, 1);'>Prajwal D'Souza,</font></a> código disponible <a href='https://github.com/prajwalsouza/Epidemic-Simulation/blob/master/Epidemic-Simulation-Web-Code.html' style='text-decoration: none; cursor: pointer;' target='_blank'><font style='color: hsla(197, 100%, 50%, 1);'>aquí.</font></a> Basado en el video de <a href='https://www.youtube.com/watch?v=gxAaO2rsdIs' style='text-decoration: none; cursor: pointer;' target='_blank'><font style='color: hsla(197, 100%, 50%, 1);'>3Blue1Brown.</font><a/>"
-
-    //document.getElementById("mainB2HSpacer2").style.height = "6%";
-    //document.getElementById("caseTypeNameH").style.height = "4%";
-    //document.getElementById("caseTypeNameH").style.fontSize = "1vmax";
-
     document.getElementById("upperLayer").style.height = "65%";
     document.getElementById("simpleCaseGraphH").style.height = "65%";
     document.getElementById("centralLocationCaseGraphH").style.height = "65%";
@@ -3854,16 +3844,6 @@ function handleLayout1() {
     ).style.height = "65%";
     document.getElementById("communitiesQuarantineCaseGraphH").style.height =
       "65%";
-
-    //document.getElementById("play-Info-QuarantineH").style.height = "4%";
-
-    // document.getElementById("playbutton").style.fontSize = "0.8vmax";
-    // document.getElementById("resetbutton").style.fontSize = "0.8vmax";
-
-    //document.getElementById("playButtonH").style.width = "12%";
-    //document.getElementById("resetButtonH").style.width = "12%";
-
-    //document.getElementById("play-Info-QuarantineHSpacer1").style.width = "4%";
 
     document.getElementById("infoH").style.fontSize = "0.8vmax";
     document.getElementById("infoH").style.width = "100%";
@@ -3886,31 +3866,14 @@ function handleLayout1() {
     document.getElementById("centralLocationoptionH").style.width = "27%";
     document.getElementById("communitiesoptionH").style.width = "23%";
 
-    // $('#CommunitiesoptionH').insertBefore('#simpleCaseoptionH')
-    // $('#centralLocationoptionH').insertBefore('#simpleCaseoptionH')
-
     $("#quarantineH").insertAfter("#communitiesoptionH");
 
-    // document.getElementById('simpleCaseoptionH').style.float = 'right'
-    // document.getElementById('centralLocationoptionH').style.float = 'right'
-    // document.getElementById('CommunitiesoptionH').style.float = 'right'
-
-    //document.getElementById("plotGraphH").style.height = "40%";
-    //document.getElementById("parametersH").style.height = "45%";
-
     document.getElementById("parametersTitleText").style.fontSize = "1.1vmax";
-    document.getElementById("parametersTitleText").style.height = "10%";
+  
 
     document.getElementById("additionalPText").style.fontSize = "0.7vmax";
 
     document.getElementById("parametersListH").style.fontSize = "0.96vmax";
-
-//    document.getElementById("mainB2HSpacer6").style.height = "1%";
-
-  //  $("#infoH").insertAfter("#mainB2HSpacer6");
-
-    // document.getElementById("gradfillParameters").style.background =
-    //   "linear-gradient(to bottom,hsla(0, 0%, 0%, 0), hsla(0, 100%, 100%, 0) 8%, hsla(0, 100%, 0%, 1) 10%, hsla(0, 100%, 100%, 0) 14%, hsla(0, 0%, 0%, 0) 88%,hsla(0, 100%, 0%, 1) 100%,hsla(0, 100%, 100%, 0) 100%,hsla(0, 100%, 100%, 0))";
   }
 }
 
@@ -3926,15 +3889,8 @@ simulationParameters = {};
 parameterData = {};
 
 simulationParameters.reproductiveNumber = 0;
-//divAdjust = 'Capacidad de contagio.<br/><font style="color:grey; font-size: 0.8vmax;">El desplazamiento hacia la derecha aumenta la capacidad de contagio de un individuo.</font>'
-//parameterData[10] = {name: 'infectionRadius', div: divAdjust, initValue: 0.1, max: 0.4, min: 0.01, step: 0.001, color: '10, 100%, 63%', transform: 'parseFloat(#paraValue#)', requiresReset: false, runFAtEnd: ''}
-//parameterData[1] = {name: 'probabilityofInfection', div: 'La probabilidad de infección en un día dado es de un @@@%',initValue: 6, max: 100, min: 0, step: 0.01, color: '10, 100%, 63%', transform: 'parseFloat(#paraValue#)/100', requiresReset: false, runFAtEnd: ''}
 divAdjust =
-  '<div class="row">@@@% población/comunidad infectada inicialmente<br/><font style="color:grey; font-size: 0.9vmax;"> En el caso de comunidades, @@@% de la comunidad es infectada inicialmente.</font> </div>';
-if (dmode == "landscape") {
-  divAdjust =
-    '<div class="row"> @@@% población/comunidad infectada inicialmente<br/><font style="color:grey; font-size: 0.9vmax;">En el caso de comunidades, @@@% de la comunidad es infectada inicialmente.</font></div>';
-}
+  '<div class="row"> <span> @@@% población/comunidad infectada inicialmente </span></div>';
 parameterData[2] = {
   name: "fractionInfectedInitially",
   div: divAdjust,
@@ -3949,7 +3905,7 @@ parameterData[2] = {
 };
 //parameterData[3] = {name: 'infectionTime', div: 'La duración de la infección es de @@@ días',initValue: 25, max: 100, min: 1, step: 1, color: '10, 100%, 63%', transform: 'parseInt(#paraValue#)', requiresReset: false, runFAtEnd: ''}
 divAdjust =
-  '<div class="row">Distanciamiento social<br/><small><font style="color:grey; font-size: 0.9vmax"> <span floar:right>Menor distancia</span>  <span style="float:right">Mayor distancia</span></font></div>';
+  '<div class="row">Normativas sociales<small><span style="color:grey; font-size: 0.9vmax"></span></div>';
 parameterData[4] = {
   name: "socialDistancingFactorA",
   div: divAdjust,
@@ -3965,7 +3921,7 @@ parameterData[4] = {
 };
 parameterData[5] = {
   name: "socialDistanceObedientPop",
-  div: "@@@% de la población obedece el distanciamiento social",
+  div: "@@@% Acatemiento social",
   initValue: 100,
   max: 100,
   min: 0,
@@ -3977,10 +3933,10 @@ parameterData[5] = {
 };
 
 divAdjust =
-  '<div class="row">Se observa distanciamiento social dentro de @@@ veces el radio de infección.<br/><font style="color:grey; font-size: 1.2vmax;"> (Esta cantidad reduce muchos cálculos. Mientras más chico el valor, mejor. Pero, valores grandes pueden imitar la simulación del video)</font></div>';
+  '<div class="row">Se observa distanciamiento social dentro de @@@ veces el radio de infección.<br/><span style="color:grey; font-size: 1.2vmax;"> (Esta cantidad reduce muchos cálculos. Mientras más chico el valor, mejor. Pero, valores grandes pueden imitar la simulación del video)</span></div>';
 if (dmode == "landscape") {
   divAdjust =
-    '<div class="row">Se observa distanciamiento social dentro de @@@ veces el radio de infección.<br/><font style="color:grey; font-size: 0.8vmax;">(Esta cantidad reduce muchos cálculos. Mientras más chico el valor, mejor. Pero, valores grandes pueden imitar la simulación del video)</font></div>';
+    '<div class="row">Se observa distanciamiento social dentro de @@@ veces el radio de infección.<br/><span style="color:grey; font-size: 0.8vmax;">(Esta cantidad reduce muchos cálculos. Mientras más chico el valor, mejor. Pero, valores grandes pueden imitar la simulación del video)</span></div>';
 }
 
 //parameterData[6] = {name: 'boxesToConsider', div: divAdjust,initValue: 2, max: 20, min: 1, step: 1, color: '40, 100%, 50%', transform: 'parseInt(#paraValue#)', requiresReset: false, runFAtEnd: ''}
@@ -3988,7 +3944,7 @@ if (dmode == "landscape") {
 parameterData[7] = {
   name: "quarantineAfter",
   div:
-    '<div class="row"> El sistema de salud detecta un individuo contagiado @@@ días después de producido el contagio.</div>',
+    '<div class="row"> Velocidad de detección @@@ días.</div>',
   initValue: 7,
   max: 25,
   min: 1,
@@ -4001,7 +3957,7 @@ parameterData[7] = {
 parameterData[8] = {
   name: "startQ",
   div:
-    '<div class="row">El sistema de salud se pone en marcha @@@ días después del comienzo de la epidemia.</div>',
+    '<div class="row">Respuesta del sistema @@@ días.</div>',
   initValue: 2,
   max: 50,
   min: 0,
@@ -4014,7 +3970,7 @@ parameterData[8] = {
 parameterData[9] = {
   name: "probabilityOfNoSymptoms",
   div:
-    '<div class="row">@@@% de los contagiados son asintomáticos, luego, no son detectados por el sistema de salud.</div>',
+    '<div class="row">@@@% Pacientes asiontomáticos.</div>',
   initValue: 20,
   max: 100,
   min: 0,
@@ -4034,10 +3990,10 @@ parameterData[9] = {
 //parameterData[16] = {name: 'frameRate', div: 'Fotogramas por segundo &nbsp&nbsp @@@',initValue: 40, max: 100, min: 10, step: 1, color: '198, 100%, 50%', transform: 'parseInt(#paraValue#)', requiresReset: true, runFAtEnd: 'setAnimationDetails()'}
 
 divAdjust =
-  '<div class="row">@@@ días simulados por segundo <br/><font style="color:grey; font-size: 1.2vmax;"> (Puede variar dependiendo de la velocidad de tu reloj.)</font></div>';
+  '<div class="row">@@@ días simulados por segundo <br/><span style="color:grey; font-size: 1.2vmax;"> (Puede variar dependiendo de la velocidad de tu reloj.)</span></div>';
 if (dmode == "landscape") {
   divAdjust =
-    '<div class="row">@@@ días simulados por segundo <br/><font style="color:grey; font-size: 0.8vmax;"> (Puede variar dependiendo de la velocidad de tu reloj.)</font></div>';
+    '<div class="row">@@@ días simulados por segundo <br/><span style="color:grey; font-size: 0.8vmax;"> (Puede variar dependiendo de la velocidad de tu reloj.)</span></div>';
 }
 //parameterData[17] = {name: 'daysEverySecond', div: divAdjust,initValue: 3, max: 20, min: 1, step: 1, color: '198, 100%, 50%', transform: 'parseInt(#paraValue#)', requiresReset: true, runFAtEnd: 'setAnimationDetails()'}
 
@@ -4056,15 +4012,15 @@ function addVariousParameters() {
         'Text" style="margin:0px;width:45%; position: relative; z-index: 1;display: inline-block; text-align: left;">' +
         parameterData[parameterIndex].div.replace(
           /@@@/g,
-          '<font style="font-weight:bold; color:hsla(' +
+          '<span style="font-weight:bold; color:hsla(' +
             parameterData[parameterIndex].color +
             ', 1);">' +
             parameterData[parameterIndex].initValue +
-            "</font>"
+            "</span>"
         ) +
         '</div><div id="parameter' +
         pName +
-        'SliderH" style="margin:0px;width:55%; position: relative; z-index: 1; display: flex; align-items: center;"></div></div><div style="width: 100%; height: 15px"></div>';
+        'SliderH" ></div></div><div></div>';
       $(parameterDivData).appendTo("#parametersListH");
       divSlider(
         "parameter" + pName + "SliderH",
@@ -4097,20 +4053,16 @@ function addVariousParameters() {
       parameterDivData =
         '<div class="row" id="parameter' +
         pName +
-        'Box"><div id="parameter' +
-        pName +
         'Text">' +
         parameterData[parameterIndex].div.replace(
           /@@@/g,
-          '<font style="font-weight: bold; color:hsla(' +
-            parameterData[parameterIndex].color +
-            ', 1);">' +
+          '<span style="font-weight: bold; color: white;">' +
             parameterData[parameterIndex].initValue +
-            "</font>"
+            "</span>"
         ) +
-        '</div><div style="width: 100%; height: 8%"></div><div id="parameter' +
+        '</div><div class="row mb-3" id="parameter' +
         pName +
-        'SliderH"></div><div style="width: 100%; height: 15%"></div></div>';
+        'SliderH"></div></div></div>';
       $(parameterDivData).appendTo("#parametersListH");
       divSlider(
         "parameter" + pName + "SliderH",
@@ -4120,8 +4072,8 @@ function addVariousParameters() {
         parameterData[parameterIndex].initValue,
         parameterData[parameterIndex].step,
         "parameterEvent(event)",
-        "70%",
-        "4px",
+        "80%",
+        "6px",
         "hsla(190, 100%, 100%, 1)",
         "17px",
         "hsla(" + parameterData[parameterIndex].color + ", 1)",
@@ -4150,11 +4102,9 @@ function parameterEvent(event) {
     "parameter" + pName + "Text"
   ).innerHTML = parData.div.replace(
     /@@@/g,
-    '<font style="font-weight: bold; color:hsla(' +
-      parData.color +
-      ', 1);">' +
+    '<span style="font-weight: bold; color:white;">' +
       event.target.value +
-      "</font>"
+      "</span>"
   );
 
   if (pName == "quarantineAfterdiv") {
@@ -4307,11 +4257,11 @@ function changeParameter(paraN, paraValueToSet) {
     "parameter" + pName + "Text"
   ).innerHTML = parData.div.replace(
     /@@@/g,
-    '<font style="font-weight: bold; color:hsla(' +
+    '<span style="font-weight: bold; color:hsla(' +
       parData.color +
       ', 1);">' +
       paraValueToSet +
-      "</font>"
+      "</span>"
   );
 
   $("#" + pName + "Slider").val(paraValueToSet);
@@ -4463,11 +4413,11 @@ function changeParameterWithoutReload(paraN, paraValueToSet) {
     "parameter" + pName + "Text"
   ).innerHTML = parData.div.replace(
     /@@@/g,
-    '<font style="font-weight: bold; color:hsla(' +
+    '<span style="font-weight: bold; color:hsla(' +
       parData.color +
       ', 1);">' +
       paraValueToSet +
-      "</font>"
+      "</span>"
   );
 
   $("#" + pName + "Slider").val(paraValueToSet);
